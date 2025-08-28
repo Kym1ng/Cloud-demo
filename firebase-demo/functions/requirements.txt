@@ -1,0 +1,7 @@
+firebase_functions~=0.1.0
+# Add these lines for your model
+scikit-learn==1.3.0
+google-cloud-storage==2.10.0
+joblib==1.3.2
+numpy==1.26.4
+scipy==1.11.4
