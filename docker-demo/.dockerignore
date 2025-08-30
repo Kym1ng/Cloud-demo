@@ -39,6 +39,6 @@ ENV/
 .DS_Store
 Thumbs.db
 
-# Docker
-Dockerfile
-.dockerignore
+# Documentation and guides (not needed in container)
+README.md
+DEPLOYMENT_GUIDE.md
