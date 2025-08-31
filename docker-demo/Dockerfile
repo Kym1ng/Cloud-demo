@@ -15,9 +15,10 @@ COPY requirements.txt .
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the model and application code
+# Copy the model, application code, and templates
 COPY iris_model.pkl .
 COPY app.py .
+COPY templates/ templates/
 
 # Expose port
 EXPOSE 8080
@@ -26,5 +27,5 @@ EXPOSE 8080
 ENV PORT=8080
 ENV HOST=0.0.0.0
 
-# Run the application
-CMD ["python", "app.py"]
+# Run the application with Gunicorn (production-ready)
+CMD gunicorn --bind 0.0.0.0:$PORT --workers 1 --threads 8 --timeout 0 app:app
